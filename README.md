@@ -4,7 +4,7 @@
 <li> <a href="https://github.com/Saumya40-codes" target = "__blank" >Saumya Shah </a> </li>
 <li> <a href="https://github.com/Codesmith28" target = "__blank" >Sarthak Siddhpura </a> </li>
 </ul> <br>
-  We mainted this whole project repository since we started it -> <a href = "https://github.com/Codesmith28/Hostel-Hub" target = "__blank" > You can check it out here ! </a>
+  We mainted this whole project repository since we started it -> <a href = "https://github.com/Codesmith28/Hostel-Hub" target = "__blank" > You can check it out here ! </a> <br>
 <b>Primary Tech Stack Used:</b>
 <dl>
 <li> HTML5 </li>
