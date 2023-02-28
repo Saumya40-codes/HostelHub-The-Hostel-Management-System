@@ -1,0 +1,135 @@
+<!-- @format -->
+
+{% extends 'dashboard_hostellite.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  {% block head %}
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dashboard_hostellite.css')}}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Phudu:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <style>
+      .prof {
+        font-family: "Phudu", cursive;
+        text-align: center;
+        border: 5px solid aqua;
+        border-radius: 10px;
+        width: 700px;
+        height: fit-content;
+        margin-left: 380px;
+        margin-top: 50px;
+      }
+      .to_cen {
+        font-family: "Phudu", cursive;
+        font-size: 30px;
+        text-align: center;
+      }
+      .add {
+        font-family: "Phudu", cursive;
+
+        display: flex;
+        margin-left: -600px;
+        margin-top: 500px;
+        text-align: center;
+        font-family: Phudu, cursive;
+      }
+      input {
+        margin-top: 20px;
+        font-family: Phudu, cursive;
+        background: aquamarine;
+        border: 3px solid blue;
+        border-radius: 10px;
+        height: 30px;
+        text-align: center;
+      }
+      input[id="sub"] {
+        border: 5px solid blue;
+        font-family: Phudu, cursive;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 150px;
+      }
+      .details {
+        font-family: "Phudu", cursive;
+        text-align: center;
+        margin-left: 50px;
+        font-size: 20px;
+      }
+      /* align image to the center */
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      
+      body {
+        font-family: "Phudu", cursive;
+      }
+    </style>
+  </head>
+  {% endblock %}
+  <body>
+    {% block name %} {% endblock %} {% block user %}
+    <div class="prof">
+      <img
+        src="https://imgs.search.brave.com/J0Qf01tOs4e_SLcUAve9f_WOxYYDoTHflPALjXxgrMg/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC50/ZzZUWkpzamZVR0o3/dmlTc2JYQ0JRSGFI/YSZwaWQ9QXBp"
+        alt="user_alt_img"
+      />
+      <br />
+      <div class="details">
+        Name : {{user.username}} <br />
+        Hostel: {{user.hostel}} <br />
+        Floor : {{user.floor}} <br />
+        Room Number : {{user.room}} <br />
+        {% if datas.college %} College : {{datas.college}} <br />
+        Stream : {{datas.stream}} <br />
+        Phone number : {{datas.phone}} {% endif %}
+      </div>
+    </div>
+    {% endblock %}
+    <br />
+    {% block content %}
+    <div class="add">
+      <br />
+      <br />
+      <form
+        action="{{url_for('auth.show_profile',username=username,hostel=hostel)}}"
+        method="post"
+        id="add_infos"
+      >
+        <div class="to_cen">Please Add/Update other Details</div>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value="{{user.username}}"
+          hidden
+        />
+        College name:<input type="text" name="college" id="college" /> <br />
+        Your Stream: <input type="text" name="stream" id="stream" /> <br />
+        Phone Number: <input type="text" name="phone" id="phone" /> <br />
+        <input type="submit" name="sub" id="sub" />
+      </form>
+    </div>
+    {% endblock %}
+  </body>
+</html>

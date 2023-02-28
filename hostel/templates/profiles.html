@@ -1,0 +1,101 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Phudu:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <title>HOSTELHUB login</title>
+    <style>
+      body {
+        background-color: lightcyan;
+      }
+      /* change the font style of h1 */
+      h1 {
+        font-family: "Phudu", cursive;
+        font-size: 75px;
+        color: lightseagreen;
+        text-align: center;
+        border-bottom: 4px solid lightseagreen;
+        margin-top: -5px;
+      }
+      .row {
+        display: flex;
+        text-align: center;
+      }
+      .column {
+        flex: 33.33%;
+        padding: 5px;
+        border: 8px solid lightseagreen;
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+
+      .img1 {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .img2 {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      button[id="logintype"],
+      button[id="logintype_warden"] {
+        background: white;
+        border-radius: 15px;
+        text-align: center;
+        height: 45px;
+        width: 170px;
+        font-size: 20px;
+        margin-top: 63px;
+        font-family: "Phudu", cursive;
+        transition: border 0.1s;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      button[id="logintype"]:hover {
+        border: 5px solid lightseagreen;
+        color: lightseagreen;
+      }
+      button[id="logintype_warden"]:hover {
+        border: 5px solid lightseagreen;
+        color: lightseagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HOSTELHUB</h1>
+    <div class="row">
+      <div class="column">
+        <form action="{{url_for('views.wardenlogin')}}">
+          <div class="img1">
+            <img
+              src="static\warden_logo (Custom).png"
+              alt="warden_logo"
+              style="width: 50%"
+            />
+          </div>
+          <button id="logintype_warden">Warden login</button>
+        </form>
+      </div>
+      <div class="column">
+        <div class="img2">
+          <img
+            src="static\hostelite (Custom).jpg"
+            alt="hostelite_logo"
+            style="width: 50%"
+          />
+        </div>
+        <form action="{{url_for('views.hostellitelogin')}}">
+          <button id="logintype">Hostelite login</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

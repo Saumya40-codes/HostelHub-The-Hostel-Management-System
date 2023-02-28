@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block title %}<title>Document</title>{% endblock %}
+        <link rel = "stylesheet" href="static\login.css">
+        <style>
+            img[id="imginit"]{
+                position: relative;
+                margin-left: 120px;
+            }
+        </style>
+        {% block head %} {% endblock %}
+    </head>     
+    <body>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category,message in messages %}
+        {% if category=='error' %}
+        <div class="alert alert-danger alert-dismissable fade show" role='alert'>
+            {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-success alert-dismissable fade show" role='alert'>
+            {{ message }}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {%  endif %}
+        {% endwith %}
+        <div class = "centre">
+            <img src="static\others.png" alt="students" width="150px" height="90px" id="imginit">
+            <h1>HostelHub
+                Login
+            </h1>
+
+            {% block form %}
+            <form method="post" action="{{url_for('auth.hostellite_login')}}">
+            {% endblock %}
+
+                <!-- for Username -->
+                <div class="txt_field">
+                    <input type="text" name="username" id="username"  required> 
+                    <span></span>
+                    <label for="username">Username</label>
+                </div>
+                
+                <!-- for Password-->
+                <div class="txt_field">
+                    <input type="password" name="password" id="password" required> 
+                    <span></span>
+                    <label for="password">Password</label>
+                </div>
+                <div class="txt_field">
+                    <input type="text" id="hostel" name = "hostel"  required>
+                    <span></span>
+                    <label for="hostel">Your Hostel Name</label>
+                </div>
+                {% block content %}
+                <input type="submit" value="Login" name="submit"> <br>   
+            </form>
+            {% endblock %}
+        </div>
+    </body>
+</html>

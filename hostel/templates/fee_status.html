@@ -1,0 +1,78 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fee status</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Phudu:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      u{
+        color: blue;
+      }
+      body {
+        background: lightcyan;
+        font-family: "Phudu", cursive;
+        /* make the body box such that it is a bit longer than the content */
+        min-height: 40vh;
+      }
+      hr {
+        background-color: blue;
+        margin-top: 15px;
+      }
+      .paid,
+      .not_paid {
+        align-items: center;
+        border: 5px solid blue;
+        border-radius: 10px;
+        margin-top: 40px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        margin-top: 15px;
+        text-align: center;
+      }
+      img {
+        margin-top: 20px;
+        width: 450px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>FEES PAID:</h1>
+    {% for paid in fee_info %}
+    <div class="paid">
+      <u>From</u>
+       : {{paid.name}} <br />
+      <u>Hostel</u> : {{paid.hostel}} <br />
+    <u>Rooom</u> : {{paid.room}} <br />
+      <u>Phone number</u> : {{paid.phone}} <br />
+    <u>Screenshot added:</u> <br />
+      {% if paid.file %}
+      <img
+        src="{{ url_for('uploaded_file', filename=paid.file) }}"
+        alt="Uploaded Image"
+      />
+      {% else %} No screenshot uploaded. {% endif %}
+    </div>
+    {% endfor %}
+    <hr />
+    <h1>NOT PAID:</h1>
+    <div class="not_paid">
+      {% if np.username not in fee_info.name %} {% for not_paid in np %} 
+      <u>Name :</u>
+      {{not_paid.username }} <br />
+      <u>Room :</u> {{ not_paid.room }} <br />
+     <u>Floor: </u>{{ not_paid.floor }} <br />
+      {% endfor %} {% endif %}
+    </div>
+  </body>
+</html>

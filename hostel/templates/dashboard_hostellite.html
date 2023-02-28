@@ -1,0 +1,229 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  {% block head %}
+  <head>
+    <meta charset="UTF-8" />
+    {% block title %}
+    <title>Hostellite Dashboard</title>
+    {% endblock %}
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dashboard_hostellite.css')}}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Phudu:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      a,
+      a[id="mode"] {
+        cursor: pointer;
+        font-family: "Phudu", cursive;
+        text-align: left;
+        justify-content: left;
+      }
+
+      b {
+        font-family: Phudu, cursive;
+      }
+      tbody {
+        color: teal;
+        font-family: Phudu, cursive;
+      }
+      /* customize the profile button */
+      #tocen {
+        background-color: teal;
+        color: white;
+        font-size: 16px;
+        font-family: Phudu, cursive;
+        cursor: pointer;
+        border-radius: 15px;
+        border: 3px solid teal;
+        text-align: center;
+        align-items: center;
+        padding: 5px;
+        width: 100px;
+        margin-top: 15px;
+        transition: 0.1s;
+      }
+      /* hover setting */
+      #tocen:hover {
+        background-color: turquoise;
+        color: teal;
+        border: 3px solid teal;
+      }
+
+      div.profile {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+      h1 {
+        text-align: center;
+      }
+
+      h4,
+      div.col {
+        font-family: Phudu, cursive;
+        font-size: 20px;
+        /* move it to the right */
+        text-align: center;
+      }
+
+      /* align the table properly */
+      table,
+      th,
+      td {
+        font-family: Phudu, cursive;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  {% endblock %}
+  <body>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category,message in messages %} {% if category=='error'
+    %}
+    <div class="alert alert-danger alert-dismissable fade show" role="alert">
+      {{ message }}
+    </div>
+    {% else %}
+    <div class="alert alert-success alert-dismissable fade show" role="alert">
+      {{ message }}
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img
+                src="https://imgs.search.brave.com/J0Qf01tOs4e_SLcUAve9f_WOxYYDoTHflPALjXxgrMg/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC50/ZzZUWkpzamZVR0o3/dmlTc2JYQ0JRSGFI/YSZwaWQ9QXBp"
+              />
+              <span class="nav-item">{{username}}</span>
+            </a>
+          </li>
+          {% block dash %}
+
+          <li>
+            <a
+              href="{{url_for('views.hostellite_dashboard',username=username,hostel=hostel)}}"
+            >
+              <i class="fas fa-menorah"></i>
+              <span class="nav-item"><b>Dashboard</b></span>
+            </a>
+          </li>
+
+          {% endblock %}
+
+          <li>
+            {% block link %}
+            <a
+              href="{{url_for('views.roomands',username=username,hostel=hostel)}}"
+            >
+              {% endblock %}
+              <i class="fas fa-comment"></i>
+              <span class="nav-item"><b>Queries</b></span>
+            </a>
+          </li>
+
+          {% block link1 %}
+          <a href="{{url_for('views.rent',username=username,hostel=hostel)}}">
+            <i class="fas fa-database"></i>
+            <span class="nav-item"><b>Rent</b></span>
+          </a>
+
+          {% endblock %} {% block link2 %}
+          <li>
+            <a
+              href="{{url_for('views.search',username=username,hostel=hostel)}}"
+            >
+              <i class="fas fa-search"></i>
+              <span class="nav-item"><b>Find fellow hostellites</b></span>
+            </a>
+          </li>
+
+          {% endblock %}
+          <li>
+            <a href="{{url_for('views.home')}}" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Log out</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      {% block user %}
+      <section class="main">
+        <div class="main-top">
+          {% block name %}
+          <h1 align="center">Dashboard</h1>
+          {% endblock %}
+        </div>
+        <div class="users">
+          <div class="card">
+            <div class="col">
+              <img
+                src="https://imgs.search.brave.com/J0Qf01tOs4e_SLcUAve9f_WOxYYDoTHflPALjXxgrMg/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC50/ZzZUWkpzamZVR0o3/dmlTc2JYQ0JRSGFI/YSZwaWQ9QXBp"
+              />
+              <h4>{{username}}</h4>
+            </div>
+
+            <div class="col">
+              Hostel : {{hostel}}
+              <br />
+            </div>
+            {% block profile %}
+            <div class="profile">
+              <a
+                href="{{url_for('auth.show_profile',username=username,hostel=hostel)}}"
+                id="tocen"
+              >
+                Profile
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endblock %} {% endblock %} {% block content %}
+        <section class="attendance">
+          <div class="attendance-list">
+            <h1>Menu</h1>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Food</th>
+                  <th>type</th>
+                  <th>Day</th>
+                  <!-- <th>Details</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                {% for order in orders %}
+                <tr>
+                  {% if order.food %}
+                  <td>{{order.food}}</td>
+                  <td>{{order.type}}</td>
+                  <td>{{order.day}}</td>
+                  <!-- <td><button>View</button></td> -->
+                  {% endif %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </div>
+    {% endblock %}
+  </body>
+</html>

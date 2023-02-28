@@ -1,0 +1,114 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Phudu:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Phudu", cursive;
+      }
+      .prof {
+        text-align: center;
+        border: 5px solid aqua;
+        border-radius: 10px;
+        width: 700px;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .prof img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+      .details {
+        margin-left: 20px;
+      }
+
+      .to_cen {
+        font-size: 30px;
+        text-align: center;
+      }
+      .add {
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      input {
+        margin-top: 20px;
+      }
+      input[id="sub"] {
+        border: 3px solid teal;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 150px;
+      }
+      /* hover effect */
+      input[id="sub"]:hover {
+        background-color: teal;
+        color: white;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="prof">
+      <img
+        src="https://imgs.search.brave.com/J0Qf01tOs4e_SLcUAve9f_WOxYYDoTHflPALjXxgrMg/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC50/ZzZUWkpzamZVR0o3/dmlTc2JYQ0JRSGFI/YSZwaWQ9QXBp"
+        alt="user_alt_img"
+      />
+      <br />
+      <div class="details">
+        Name : {{user.username}} <br />
+        Hostel: {{user.hostel}} <br />
+        {% if datas.phone %} Phone Number : {{datas.phone}} <br />
+        Address : {{datas.add}} {% endif %}
+      </div>
+    </div>
+    <br />
+    <div class="add">
+      <br />
+      <br />
+      <form
+        action="{{url_for('auth.warden_profile',username=username,hostel=hostel)}}"
+        method="post"
+        id="add_infos"
+      >
+        <div class="to_cen">Please Add/Update other Details</div>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value="{{user.username}}"
+          hidden
+        />
+        <br />
+        Your Phone Number:<input type="text" name="phone" id="phone" /> <br />
+        Address of your Hostel: <input type="text" name="add" id="add" /> <br />
+        <input type="submit" name="sub" id="sub" />
+      </form>
+    </div>
+  </body>
+</html>

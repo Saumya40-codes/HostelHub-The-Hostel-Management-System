@@ -1,0 +1,152 @@
+/** @format */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana;
+  background:#b8daff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background:#fefefe;
+  border-radius: 30px;
+  color: teal;
+}
+
+.centre h1 {
+  text-align: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid aqua;
+}
+
+.centre form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+form .txt_field {
+  position: relative;
+  border-bottom: 2px solid aqua;
+  margin: 30px 0;
+}
+
+.txt_field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 17px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.txt_field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: darkgray;
+  transform: translateY(-50%);
+  font-size: 17px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.txt_field span::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: darkslategray;
+  transition: 0.5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+  top: -5px;
+  color: darkcyan;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+  width: 100%;
+}
+
+.pass {
+  margin: -5px 0 25px 5px;
+  color: gray;
+  cursor: pointer;
+}
+
+.pass:hover {
+  text-decoration: underline;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background-color: slategray;
+  border-radius: 30px;
+  font-family: Verdana;
+  color: blanchedalmond;
+  font-weight: 550;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="submit"]:hover {
+  border-color: slategray;
+  transition: 0.5s;
+}
+
+.signup_link {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 15px;
+  color: gray;
+}
+
+.signup_link a {
+  color: teal;
+  text-decoration: none;
+}
+
+.signup_link a:hover {
+  text-decoration: underline;
+}
+
+select[id="hostel_name"]{
+  background: aqua;
+  height: 20px;
+  width:100%;
+  text-align: center;
+}
+.alert{position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}
+.alert-heading{color:inherit}
+.alert-link{font-weight:700}
+.alert-dismissible{padding-right:4rem}
+.alert-dismissible .close{position:absolute;top:0;right:0;padding:.75rem 1.25rem;color:inherit}
+.close{position:absolute;top:0;right:0;padding:.75rem 1.25rem;color:inherit}
+.alert-primary{color:#004085;background-color:#cce5ff;border-color:#b8daff}
+.alert-primary hr{border-top-color:#9fcdff}.alert-primary .alert-link{color:#002752}
+.alert-secondary{color:#383d41;background-color:#e2e3e5;border-color:#d6d8db}
+.alert-secondary hr{border-top-color:#c8cbcf}
+.alert-secondary .alert-link{color:#202326}
+.alert-danger{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}
+.alert-danger hr{border-top-color:#f1b0b7}.alert-danger .alert-link{color:#491217}
+.alert-light{color:#818182;background-color:#fefefe;border-color:#fdfdfe}
+.alert-light hr{border-top-color:#ececf6}.alert-light .alert-link{color:#686868}
+.alert-dark{color:#1b1e21;background-color:rgb(59, 177, 59);border-color:#c6c8ca}
+.alert-success{background-color:rgb(59, 177, 59);background-color:rgb(59, 177, 59);border-color:rgb(59, 177, 59)}
+.alert-success hr{border-top-color:rgb(59, 177, 59)}.alert-danger .alert-link{color:green}

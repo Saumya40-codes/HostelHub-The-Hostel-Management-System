@@ -1,0 +1,141 @@
+/** @format */
+
+body {
+  font-family: "Phudu", cursive;
+}
+
+.c {
+  max-width: 100%;
+  text-align: center;
+  background-color: rgb(167, 219, 232);
+  border: 3px solid rgb(9, 3, 42);
+  border-radius: 5px;
+}
+
+.d {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.e {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 400px;
+  max-width: 100%;
+  font-family: Phudu, cursive;
+  padding-right: 500px;
+  padding-left: 200px;
+}
+
+form p {
+  margin-bottom: 20px;
+  font-family: Phudu, cursive;
+  font-size: 25px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="password"],
+form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #133421;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-family: Phudu, cursive;
+}
+
+form input[type="file"] {
+  cursor: pointer;
+  margin-left: 90px;
+  width: 400px;
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Phudu, cursive;
+}
+
+form input[type="submit"],
+form input[type="reset"] {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #4caf50;
+  font-family: Phudu, cursive;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+  background-color: #267b29;
+}
+
+form legend {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+form input[type="radio"] {
+  margin-right: 10px;
+  font-family: "Phudu", cursive;
+}
+
+body {
+  font-family: "Phudu", cursive;
+}
+/* make image smaller */
+img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+input {
+  font-family: Phudu, cursive;
+}
+
+u {
+  font-family: Phudu, cursive;
+  font-size: 20px;
+}
+
+/* change font in choose file button */
+input[type="file"] {
+  font-family: Phudu, cursive;
+}
+
+/* make input boxes longer */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #133421;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  font-family: Phudu, cursive;
+}

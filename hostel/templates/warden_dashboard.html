@@ -1,0 +1,84 @@
+{% extends 'dashboard_hostellite.html' %}
+{% block head %}
+<head>
+{{super()}}
+<style>
+  .ql {
+    margin-top: 40px;
+    font-family: "Phudu", cursive;
+    text-align: center;
+    font-size: 70px;
+    color: rgb(0, 81, 255);
+  }
+  .links {
+    font-size: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .links > a {
+    text-decoration: none;
+    text-align: center;
+    color: blue;
+    padding: 10px;
+    border: 2px solid rgb(0, 81, 255);
+    border-radius: 10px;
+    margin: 10px;
+    transition: border 0.1s linear;
+    font-family: "Phudu", cursive;
+  }
+  hr{
+    margin-top: 50px;
+    border: 2px solid blue;
+  }
+
+  .links > a:hover {
+    font-family: "Phudu", cursive;
+    color: teal;
+    border: 5px teal solid;
+  }
+</style>
+</head>
+{% endblock %}
+{% block dash %}
+<li>
+  <a href="#">
+    <i class="fas fa-menorah"></i>
+    <span class="nav-item"><b>Dashboard</b></span>
+  </a>
+</li>
+{% endblock %}
+{% block link %}
+    <a href="{{url_for('views.message_for_warden')}}">
+{% endblock %}
+{% block link1 %} {% endblock %} 
+{% block link2 %} 
+<li>
+  <a href="{{url_for('auth.fee_status',hostel=hostel)}}">
+    <i class="fas fa-search"></i>
+    <span class="nav-item"><b>Check Fee status</b></span>
+  </a>
+</li>
+{% endblock %}
+{% block user %} 
+{{super()}}
+{% endblock %}
+{% block profile %}
+<div class="profile">
+  <a
+href="{{url_for('auth.warden_profile',username=username,hostel=hostel)}}" 
+id="tocen" >
+Profile
+</a>
+</div>
+{% endblock %}
+{% block content %}
+<hr />
+<div class="ql">Quick Links <br /></div>
+<div class="links">
+  <a href="{{url_for('views.add_hostellite')}}" id="link1">Add Hostellite</a
+  >
+  <a href="{{url_for('views.add_mess')}}" id="link2">ADD/UPDATE mess menu</a>
+</div>
+{% endblock %}

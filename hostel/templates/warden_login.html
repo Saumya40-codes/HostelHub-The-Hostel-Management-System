@@ -1,0 +1,13 @@
+{% extends 'login.html' %}
+{% block title %}<title>Warden Login</title>{% endblock %}
+{%block content %}
+{%block form %}<form method="post" action="{{url_for('auth.login')}}"> {% endblock %}
+<div class="signup_link">
+    Hostel Name not found? <br>
+    <a href = "{{url_for('views.wardenRegister')}}">
+       <small>Sign-up and get access</small>
+    </a>
+</div>
+{{ super() }}
+{% endblock %}
+

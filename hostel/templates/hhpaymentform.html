@@ -1,0 +1,41 @@
+{% extends 'dashboard_hostellite.html' %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='pay.css') }}">
+
+  <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Phudu:wght@600&display=swap"
+      rel="stylesheet"
+    />
+{% endblock %}
+{% block user %} {% endblock %}
+{% block content %}
+  <div class="c">
+    <form action="{{url_for('views.rent',username=username,hostel=hostel)}}" method="post" enctype="multipart/form-data">
+      <h1 class="d">PAYMENT</h1>
+      <p>Name: <input type="text" name="name" required /></p>
+
+      <!-- section to add room number -->
+      <p>Room number: <input type="text" name="room" required /></p>
+      <p>Phone number: <input type="text" name="phone" required /></p>
+
+      <p>Hostel Name: <input type="text" name="hostel" id="email" required /></p>
+      <h2 class="e">PAYMENT INFORMATION</h2>
+
+      <!-- add a qr code image below-->
+      <img src="{{ url_for('static', filename='qr.png') }}" alt="" /> <br />
+      <br />
+
+      <div class="add_file">
+        <p>
+          <u> Attach the screenshot of your payment :</u>
+       <input type="file" name="file" id="add_file" required />
+        </p>
+      </div>
+      <p>
+        <input type="submit" value="Pay" />
+      </p>
+    </form>
+  </div>
+{% endblock %}

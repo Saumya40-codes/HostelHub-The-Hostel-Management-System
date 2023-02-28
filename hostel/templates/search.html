@@ -1,0 +1,242 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Phudu:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='search.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search other hostellites</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dashboard_hostellite.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Phudu:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      input[id="submit"]{
+        cursor: pointer;
+      }
+      td,th{
+        width: 100px;
+      }
+     h1 {
+        font-family: "Phudu", cursive;
+        font-size: 55px;
+        color: rgb(0, 81, 255);
+      }
+
+      body {
+        background-color: lightcyan;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        flex-direction: column;
+        font-family: "Phudu", cursive;
+      }
+      table {
+        position: relative;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        margin-top: 55px;
+        /* fix the table position */
+        margin-left: 100px;
+        margin-right: 100px;
+        border-radius: 15px;
+
+      }
+
+      label{
+        font-size: 20px;
+        font-family: "Phudu", cursive;
+        color: black;
+      }
+
+      form {
+        font-size: 20px;
+        margin-left: 100px;
+      }
+
+      caption {
+        font-size: 30px;
+        color: black;
+        font-family: "Phudu", cursive;
+        margin-bottom: 20px;
+        border-top: 3px solid rgb(0, 81, 255);
+        margin-top: 10px;
+      }
+
+      td {
+        text-align: center;
+        border: 3px solid rgb(0, 81, 255);
+        position: relative;
+        max-width: 100%;
+        padding: 40px 80px;
+      }
+      th {
+        position: relative;
+        text-align: center;
+        border: 3px solid rgb(0, 81, 255);
+        max-width: 100%;
+        font-size: 19px;
+      }
+      input {
+        border: 1px solid rgb(0, 81, 255);
+        border-radius: 15px;
+        margin-top: 15px;
+        padding: 10px;
+        font-family: "Phudu", cursive;
+        cursor: beaming;
+        transition: 0.09s;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      #add {
+        background-color: rgb(0, 81, 255);
+        color: white;
+        border: 1px solid rgb(0, 81, 255);
+        border-radius: 15px;
+        margin-top: 20px;
+        padding: 15px;
+        font-family: "Phudu", cursive;
+        cursor: pointer;
+        transition: border 0.09s;
+        margin-left: 155px;
+        font-size: 15px;
+        width: 100px;
+        margin-bottom: -15px;
+        
+      }
+
+      #add:hover {
+        border: 3px solid rgb(0, 81, 255);
+        color: rgb(0, 81, 255);
+        background-color: white;
+      }
+
+      table {
+        margin: 0 auto;
+        width: 50%;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="logo">
+              <img
+                src="https://imgs.search.brave.com/J0Qf01tOs4e_SLcUAve9f_WOxYYDoTHflPALjXxgrMg/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC50/ZzZUWkpzamZVR0o3/dmlTc2JYQ0JRSGFI/YSZwaWQ9QXBp"
+              />
+              <span class="nav-item">{{username}}</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('views.hostellite_dashboard',username=username,hostel=hostel)}}">
+              <i class="fas fa-menorah"></i>
+              <span class="nav-item"><b>Dashboard</b></span>
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('views.roomands',username=username,hostel=hostel)}}">
+              <i class="fas fa-comment"></i>
+              <span class="nav-item"><b>Queries</b></span>
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('views.rent',username=username,hostel=hostel)}}">
+              <i class="fas fa-database"></i>
+              <span class="nav-item"><b>Rent</b></span>
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('views.search',username=username,hostel=hostel)}}">
+              <i class="fas fa-search"></i>
+              <span class="nav-item"><b>Find fellow hostellites</b></span>
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('views.home')}}" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Log out</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+<section class="attendance">
+  <div class="attendance-list">
+        <h1 align="center">Search Hostellite</h1>
+        <div class="to_cen">
+        <form action="{{url_for('auth.search',username=username,hostel=hostel)}}" method="post">
+          <label for="new_name">Name: </label> <br>
+          <input type="text" id="name" name="name" /> <br />
+          <label for="hostel_name">Hostel Name:</label>  <br>
+          <input type="text" id="hostel" name="hostel" />  <br>
+          <input type="submit" name="submit" id="submit">
+        </div>
+        </form>
+        <table>
+          {% if nothing %}
+          <div class="nothing"><input type="text" hidden></div>
+          {% elif notfound or info.username == "" %}
+          <div class="not_found"> No search results found of given user in our database </div>
+          {% else %}
+          <caption>
+            Details
+          </caption>
+          {% if info.username %}
+          <tr>
+            <th>Name</th>
+            <th>Hostel</th>
+            <th>Floor</th>
+            <th>ROOM</th>
+            <th>College</th>
+            <th>Stream</th>
+            <th>Phone Number</th>
+          </tr>
+          <tr>
+            <td>{{info.username}}</td>
+            <td>{{info.hostel}}</td>
+            <td>{{info.floor}}</td>
+            <td>{{info.room}}</td>
+            {% endif %}
+            {% if more_info.college %}
+            <td>{{more_info.college}}</td>
+            <td>{{more_info.stream}}</td>
+            <td>{{more_info.phone}}</td>
+            {% endif %}
+          </tr>
+          {% endif %}
+        </table>  
+  </div>
+</section>
+</section>
+</div>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+/** @format */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: phudu, cursive;
+  background-color:#9fcdff;
+}
+nav{
+  background-color:#9fcdff;
+}
+.send_message {
+  background-color: #baeded;
+  color: #080814;
+  border: solid rgb(10, 3, 36);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+body {
+  margin: 15px 30px;
+  font-size: medium;
+  padding: 8px;
+  font-weight: 500;
+}
+input[type="submit"],
+input[type="reset"] {
+  box-sizing: border-box;
+  background-color: rgb(77, 86, 135);
+  color: rgb(217, 237, 224);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  cursor: pointer;
+  /* make it larger */
+  width: 200px;
+  height: 50px;
+  font-family: phudu, cursive;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: darkgreen;
+  color: #f2f7f2;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: phudu, cursive;
+  height: 250px;
+}
+
+/* edit the font style in input box */
+input[type="text"] {
+  border: 1px solid darkslategrey;
+  font-family: Phudu, cursive;
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.alert-primary {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+.alert-primary {
+  border-top-color: #9fcdff;
+}
+.alert-primary .alert-link {
+  color: #002752;
+}
+.alert-secondary {
+  color: #383d41;
+  background-color: #e2e3e5;
+  border-color: #d6d8db;
+}
+.alert-secondary hr {
+  border-top-color: #c8cbcf;
+}
+.alert-secondary .alert-link {
+  color: #202326;
+}
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+.alert-danger hr {
+  border-top-color: #f1b0b7;
+}
+.alert-danger .alert-link {
+  color: #491217;
+}
+.alert-light {
+  color: #818182;
+  background-color: #fefefe;
+  border-color: #fdfdfe;
+}
+.alert-light hr {
+  border-top-color: #ececf6;
+}
+.alert-light .alert-link {
+  color: #686868;
+}
+.alert-dark {
+  color: #1b1e21;
+  background-color: rgb(59, 177, 59);
+  border-color: #c6c8ca;
+}
+.alert-success {
+  background-color: rgb(59, 177, 59);
+  background-color: rgb(59, 177, 59);
+  border-color: rgb(59, 177, 59);
+}
+.alert-success :vertical {
+  border-top-color: rgb(59, 177, 59);
+}
+.alert-danger .alert-link {
+  color: green;
+}
+
+h1 {
+  text-align: center;
+  padding: auto;
+  font-size: 55px;
+  color: rgb(27, 4, 92);
+  font-weight: bold;
+  text-decoration: underline;
+  /* prevent the unederline frmo breaking */
+  /* move underline a bit downwards */
+  text-decoration-skip-ink: none;
+  padding-bottom: 10px;
+}
+
+.send_message{
+  margin-left: 20px;
+}

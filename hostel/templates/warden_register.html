@@ -1,0 +1,9 @@
+{% extends 'login.html' %}
+
+{% block title %} <title>Warden Register</title> {% endblock %}
+{% block content %}
+{%block form %}<form method="post" action="{{url_for('auth.signup')}}"> {% endblock %}
+    <input type="submit" value="Register" name="submitform">
+    Already have an account?
+    <a href="{{url_for('views.wardenlogin')}}"><small>Sign in</small></a>
+{% endblock %}
