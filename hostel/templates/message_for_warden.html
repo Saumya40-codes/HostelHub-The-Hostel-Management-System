@@ -1,79 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Phudu:wght@600&display=swap"
-      rel="stylesheet"
-    />
-</head>
-<style>
-  body {
-    background: lightcyan;
-    font-family: "Phudu", cursive;
-  }
-  .blocks {
-    font-family: "Phudu", cursive;
-    border: 3px solid blue;
-    border-radius: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 15px;
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Phudu:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: lightcyan;
+      font-family: "Phudu", cursive;
+    }
+    .blocks {
+      font-family: "Phudu", cursive;
+      border: 3px solid blue;
+      border-radius: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
 
-  h1{
-    text-align: center;
-    font-size: 60px;
-    font-family: "Phudu", cursive;
-    margin-bottom: 50px;
-  }
+    h1{
+      text-align: center;
+      font-size: 60px;
+      font-family: "Phudu", cursive;
+      margin-bottom: 50px;
+    }
 
-  p{
-    font-size: 17px;
-    text-align: left;
-    font-family: "Phudu", cursive;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-  }
+    p{
+      font-size: 17px;
+      text-align: left;
+      font-family: "Phudu", cursive;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
 
-  /* make the clear button look better */
-  #clear {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    font-family: Phudu , cursive;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
-    margin-left: 10px;
-    margin-bottom: 5px;
-  }
+    /* make the clear button look better */
+    #clear {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-family: Phudu , cursive;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      margin-left: 10px;
+      margin-bottom: 5px;
+    }
 
-  /* add hover effect */
-  #clear:hover {
-    background-color: #45a049;
-  }
+    /* add hover effect */
+    #clear:hover {
+      background-color: #45a049;
+    }
 
-</style>
+    /* add style for checked block */
+    .blocks.checked {
+      background-color: red;
+    }
+
+  </style>
 </head>
 <body>
   <h1>QUERIES AND MESSAGES</h1>
-{% for content in infos %}
-<div class="blocks">
-  <form action="{{url_for('views.message_for_warden')}}" method="post">
-    <input type="text" name="message_id" value="{{content.id}}" hidden>
-  <p>From : {{content.username}}</p>
-  <p>Subject : {{content.subject}}</p>
-  <p>Query : {{content.info }}</p>
+  {% for content in infos %}
+  <div class="blocks">
+    <form action="{{url_for('views.message_for_warden')}}" method="post">
+      <input type="text" name="message_id" value="{{content.id}}" hidden>
+      <p>From : {{content.username}}</p>
+      <p>Subject : {{content.subject}}</p>
+      <p>Query : {{content.info }}</p>
+      <input type="checkbox" id="block-{{content.id}}" class="block-checkbox">
+      <label for="block-{{content.id}}">Check for done/resolved</label> <br>
+      <button type="submit" value="clear" id="clear" name="clear">clear Message</button>
+    </form>
+  </div>
+  {% endfor %}
 
-  <button tyep="submit" value="clear" id="clear" name="clear">clear</button>
-</form>
-</div>
-{% endfor %} 
+  <script>
+    const checkboxes = document.querySelectorAll('.block-checkbox');
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener('change', () => {
+        const block = checkbox.parentElement.parentElement;
+        if (checkbox.checked) {
+          block.classList.add('checked');
+        } else {
+          block.classList.remove('checked');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
