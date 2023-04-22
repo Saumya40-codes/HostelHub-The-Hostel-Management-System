@@ -47,10 +47,8 @@ We have tried to keep it that way so that while creating hostellite account ward
   <img src = "https://user-images.githubusercontent.com/115284013/233756915-f7b9c913-8207-47e9-9ad5-4909f6170439.png"  width = 1450px height = 550px> <br>
     <label> Page to find other fellow hostellites </label>  <br>
   <img src = "https://user-images.githubusercontent.com/115284013/233757057-e32490d1-bd9c-4f41-8278-42d4d07bd30e.png" width = 1450px height = 550px> <br>
-    <label> Page to send queries/messages </label>   <br>
-  <img src = "https://user-images.githubusercontent.com/115284013/233757222-ffc076f7-0b83-4eec-9b1c-cc28aa5b9f6e.png" width = 1450px height = 550px> <br>
-    <label> Page to send queries/messages </label>   <br> <br> <br> <br>
-  <img src = "https://user-images.githubusercontent.com/115284013/233757222-ffc076f7-0b83-4eec-9b1c-cc28aa5b9f6e.png" width = 1450px height = 550px> <br>
+    <label> Page to send queries/messages </label>   <br> 
+  <img src = "https://user-images.githubusercontent.com/115284013/233757222-ffc076f7-0b83-4eec-9b1c-cc28aa5b9f6e.png" width = 1450px height = 550px> <br> <br> <br> <br> <br>
       <b> check other features only  on our site !! </b>
 
 
