@@ -13,36 +13,95 @@
     />
 
     <style>
-      u{
-        color: blue;
+      /* Colors */
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --success-color: #27ae60;
+        --danger-color: #c0392b;
+        --warning-color: #f39c12;
+        --info-color: #2980b9;
       }
+
+      /* Fonts */
       body {
-        background: lightcyan;
+        background: #f5f5f5;
         font-family: "Phudu", cursive;
-        /* make the body box such that it is a bit longer than the content */
-        min-height: 40vh;
-      }
-      hr {
-        background-color: blue;
-        margin-top: 15px;
-      }
-      .paid,
-      .not_paid {
-        align-items: center;
-        border: 5px solid blue;
-        border-radius: 10px;
-        margin-top: 40px;
-        font-size: 20px;
-        text-align: center;
       }
 
       h1 {
-        margin-top: 15px;
+        font-size: 2.5rem;
         text-align: center;
+        margin: 2rem 0;
+        color: var(--primary-color);
       }
-      img {
-        margin-top: 20px;
-        width: 450px;
+
+      /* Tables */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 0.75rem;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      td img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        transition: background-color 0.2s;
+      }
+
+      .btn:hover {
+        background-color: var(--info-color);
+      }
+
+      /* Filters */
+      .filters {
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .filter-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .filter-label {
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .filter-select {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        margin-right: 0.5rem;
       }
     </style>
   </head>
