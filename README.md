@@ -24,7 +24,7 @@ We have tried to keep it that way so that while creating hostellite account ward
     Add hostellite : In this firstly what warden can do is to create the database of the hostellite and can also allot him a room and if that room is already occuppied, he will get to know that as well as an error <br> <br>
     Add menu : Here warden can add the day-to-day mess menu for hostellite which will be shown on hostellites side <br>
     Get Queries : Here warden can read the queries which is sent by hostellites <br>
-    Chech fee status : In this warden will be able to see, who has paid the fee and who hasn't and for those who have paid the fees directly through our side, warden will be able to show the information which got submitted while paying fees ( including the screenshot of paid message submitted by hostellite !! )
+    Check fee status : In this warden will be able to see, who has paid the fee and who hasn't and for those who have paid the fees directly through our side, warden will be able to show the information which got submitted while paying fees ( including the screenshot of paid message submitted by hostellite !! )
     <li> Hostellite Side </li>
     In profile section he will be able to  add/update additional details <br>
     Mess menu will be shown to him in dashboard only <br>
@@ -42,6 +42,8 @@ We have tried to keep it that way so that while creating hostellite account ward
   <img src = "https://user-images.githubusercontent.com/115284013/233756563-13fa1a84-12c4-40e4-ab21-acd9c6573b55.png" width = 1450px height = 550px >  <br>
     <label> Checking messages or queries page from hostellites  <br>
   <img src = "https://user-images.githubusercontent.com/115284013/233756818-f2a778e9-4463-4da5-abf4-5987c4a2bb20.png"  width = 1450px height = 550px >   <br>
+      <label> Fee status page </label>
+  <img src = "https://user-images.githubusercontent.com/115284013/235099351-c7320429-1b41-480d-8dd8-b728e4861597.png" width = 1450px height = 550px> <br>
       <b> There are other warden side features as well which are not covered here but you check them on our site </b>  <br>  <br> 
     <label> Dashboard (Hostellite Side)
   <img src = "https://user-images.githubusercontent.com/115284013/233756915-f7b9c913-8207-47e9-9ad5-4909f6170439.png"  width = 1450px height = 550px> <br>
